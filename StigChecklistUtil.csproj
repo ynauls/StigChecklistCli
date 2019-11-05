@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove=".editorconfig" />
     <None Remove="U_CCI_List.xml" />
   </ItemGroup>
 
