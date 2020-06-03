@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace StigChecklistUtil.Models
+namespace StigChecklistCli.Models
 {
     public class StigKey : IComparer<StigKey>, IEquatable<StigKey>
     {

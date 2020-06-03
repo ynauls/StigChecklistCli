@@ -3,5 +3,8 @@
 // Project-level suppressions either have no target or are given
 // a specific target and scoped to a namespace, type, member, etc.
 
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2235:Mark all non-serializable fields", Justification = "auto generated files", Scope = "member")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "need to catch all execeptions", Scope = "member")]
+using System.Diagnostics.CodeAnalysis;
+
+[assembly: SuppressMessage("Usage", "CA2235:Mark all non-serializable fields", Justification = "auto generated files")]
+[assembly: SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "need to catch all execeptions")]
+[assembly: SuppressMessage("Style", "IDE0003:Remove qualification", Justification = "auto generated files")]

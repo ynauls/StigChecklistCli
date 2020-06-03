@@ -1,17 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>stigchecklist-cli</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove=".editorconfig" />
-    <None Remove="U_CCI_List.xml" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="U_CCI_List.xml" />
+    <EmbeddedResource Include="Schemas\v209\U_CCI_List.xml" />
   </ItemGroup>
 
   <ItemGroup>

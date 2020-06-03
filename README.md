@@ -1,6 +1,8 @@
-# StigChecklistUtil
-Utility to merge STIG Viewer Checklist
+# StigChecklistCLI
+CLI to copy STIG Viewer Checklist
 
-Schema based on STIGViewer 2.9
+# Schemas Supported
+* STIGViewer 2.9
+* STIGViewer 2.10
 
 more to come...
