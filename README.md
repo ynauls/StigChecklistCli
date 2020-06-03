@@ -1,3 +1,5 @@
+![.NET Core](https://github.com/ynauls/StigChecklistCli/workflows/.NET%20Core/badge.svg)
+
 # StigChecklistCLI
 CLI to copy STIG Viewer Checklist
 
