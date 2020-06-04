@@ -10,18 +10,13 @@ using System.Xml.Serialization;
 namespace StigChecklistCli.Helpers
 {
     /// <summary>
-    /// Given a source and target STIG checklist file paths as arguments, the executable will copy the following from source and master/target into a "copied" file.    
-    /// <list type="bullet">
-    /// <item>source.vulnerability.status</item>
-    /// <item>source.vulnerability.comments</item>
-    /// <item>soure.vulnerability.finding_details</item>
-    /// </list>    
-    ///  Target file not touched, it will generate a new file.
+    /// Helper method to get STIG Check list 
     /// </summary>
     public static class StigChecklistHelper
-    {     
+    {
         /// <summary>
         /// Deserializes cci list from embedded resource
+        /// NOTE: U_CCI_List.xml was pulled from STIG Viewer 2.09
         /// </summary>        
         public static cci_list GetCcilist()
         {
@@ -65,7 +60,9 @@ namespace StigChecklistCli.Helpers
             Console.WriteLine($"Reading STIG File '{filePath}'....");
 
             var serializer = new XmlSerializer(typeof(CHECKLIST));
-            var sourceFileStream = new FileStream(filePath, FileMode.Open);
+
+            using var sourceFileStream = new FileStream(filePath, FileMode.Open);
+            
             var checklist = (CHECKLIST)serializer.Deserialize(sourceFileStream);
 
             return checklist;

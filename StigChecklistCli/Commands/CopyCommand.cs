@@ -7,6 +7,15 @@ using System.Linq;
 
 namespace StigChecklistCli.Commands
 {
+    /// <summary>
+    /// Given a source and target STIG checklist file paths as arguments, it will copy the following from source and master/target into a "copied" file.    
+    /// <list type="bullet">
+    /// <item>source.vulnerability.status</item>
+    /// <item>source.vulnerability.comments</item>
+    /// <item>soure.vulnerability.finding_details</item>
+    /// </list>    
+    ///  Target file not touched, it will generate a new file.
+    /// </summary>
     public class CopyCommand
     {
         private readonly CopyOptions opts;
@@ -17,6 +26,7 @@ namespace StigChecklistCli.Commands
         {
             this.opts = opts ?? throw new ArgumentNullException(nameof(opts), $"{nameof(CopyOptions)} object is required.");
         }
+
         public int Run()
         {
             int returnValue = 0;
@@ -33,7 +43,7 @@ namespace StigChecklistCli.Commands
         }
 
         /// <summary>
-        /// Given source and master files, it will copy and generate a new file
+        /// Given source and <see cref="targetPath"/> files, it will copy and generate a new file
         /// </summary>
         /// <param name="sourceFile">file containing control findings</param>
         /// <param name="targetFile">file to copy content from <paramref name="sourceFile"/></param>
@@ -86,7 +96,7 @@ namespace StigChecklistCli.Commands
             {
                 if (!targetStigLookup.ContainsKey(sourceLookup.Key))
                 {
-                    Console.WriteLine($"Master Checklist does NOT have STIG '{sourceLookup.Key}', skipping....");
+                    Console.WriteLine($"Target Checklist does NOT have STIG '{sourceLookup.Key}', skipping....");
                     continue;
                 }
 
